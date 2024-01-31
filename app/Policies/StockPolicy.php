@@ -2,11 +2,11 @@
 
 namespace App\Policies;
 
-use App\Models\Stoc;
+use App\Models\Stock;
 use App\Models\User;
 use Illuminate\Auth\Access\Response;
 
-class StocPolicy
+class StockPolicy
 {
     /**
      * Determine whether the user can view any models.
@@ -19,7 +19,7 @@ class StocPolicy
     /**
      * Determine whether the user can view the model.
      */
-    public function view(User $user, Stoc $stoc): bool
+    public function view(User $user, Stock $stoc): bool
     {
         //
     }
@@ -35,7 +35,7 @@ class StocPolicy
     /**
      * Determine whether the user can update the model.
      */
-    public function update(User $user, Stoc $stoc): bool
+    public function update(User $user, Stock $stoc): bool
     {
         //
     }
@@ -43,7 +43,7 @@ class StocPolicy
     /**
      * Determine whether the user can delete the model.
      */
-    public function delete(User $user, Stoc $stoc): bool
+    public function delete(User $user, Stock $stoc): bool
     {
         //
     }
@@ -51,7 +51,7 @@ class StocPolicy
     /**
      * Determine whether the user can restore the model.
      */
-    public function restore(User $user, Stoc $stoc): bool
+    public function restore(User $user, Stock $stoc): bool
     {
         //
     }
@@ -59,7 +59,7 @@ class StocPolicy
     /**
      * Determine whether the user can permanently delete the model.
      */
-    public function forceDelete(User $user, Stoc $stoc): bool
+    public function forceDelete(User $user, Stock $stoc): bool
     {
         //
     }

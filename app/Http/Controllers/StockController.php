@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreStocRequest;
-use App\Http\Requests\UpdateStocRequest;
-use App\Models\Stoc;
+use App\Http\Requests\StoreStockRequest;
+use App\Http\Requests\UpdateStockRequest;
+use App\Models\Stock;
 
-class StocController extends Controller
+class StockController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -27,7 +27,7 @@ class StocController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreStocRequest $request)
+    public function store(StoreStockRequest $request)
     {
         //
     }
@@ -35,7 +35,7 @@ class StocController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Stoc $stoc)
+    public function show(Stock $stoc)
     {
         //
     }
@@ -43,7 +43,7 @@ class StocController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Stoc $stoc)
+    public function edit(Stock $stoc)
     {
         //
     }
@@ -51,7 +51,7 @@ class StocController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateStocRequest $request, Stoc $stoc)
+    public function update(UpdateStockRequest $request, Stock $stoc)
     {
         //
     }
@@ -59,7 +59,7 @@ class StocController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Stoc $stoc)
+    public function destroy(Stock $stoc)
     {
         //
     }

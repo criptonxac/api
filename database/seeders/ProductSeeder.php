@@ -13,6 +13,22 @@ class ProductSeeder extends Seeder
      */
     public function run(): void
     {
-        Product::factory(30)->create();
+        $products=Product::factory(30)->create();
+
+        foreach ($products as $product)
+            $product->stocks()->create([
+               "quantity"=>rand(1,10),
+                'attributes'=>json_encode([
+                    [
+                    'attribute_id'=>1,
+                    'value_id'=>rand(1.3)
+                        ],
+                    [
+                    'attribute_id'=>2,
+                    'value_id'=>rand(4.5)
+                ],
+                ]),
+
+            ]);
     }
 }

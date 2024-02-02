@@ -25,8 +25,6 @@ class UserSeeder extends Seeder
             'password'  => Hash::make('cripton'),
         ]);
 
-       $admin->role->attach(1);
-
        User::factory()->count(10)->hasAttached(Role::find(3))->create();
     }
 }

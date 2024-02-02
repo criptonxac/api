@@ -19,6 +19,7 @@ class Value extends Model
 
     ];
 
+    public array $translatable=["name"];
     public function attribute(): BelongsTo
     {
 

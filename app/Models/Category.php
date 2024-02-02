@@ -21,7 +21,7 @@ class Category extends Model
 
         ];
 
-    public $translatable=["name"];
+    public array $translatable=["name"];
 
 
 

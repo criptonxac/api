@@ -3,7 +3,7 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
-use App\Models\Attribut;
+use App\Models\Attribute;
 use App\Models\Category;
 use App\Models\Value;
 use Illuminate\Database\Seeder;
@@ -20,7 +20,7 @@ class DatabaseSeeder extends Seeder
             CategorySeeder::class,
             RoleSeeder::class,
             UserSeeder::class,
-            AttributSeeder::class,
+            AttributeSeeder::class,
             ValueSeeder::class,
             ProductSeeder::class,
 

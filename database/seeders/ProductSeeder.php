@@ -21,11 +21,11 @@ class ProductSeeder extends Seeder
                 'attributes'=>json_encode([
                     [
                     'attribute_id'=>1,
-                    'value_id'=>rand(1.3)
+                    'value_id'=>rand(1,3)
                         ],
                     [
                     'attribute_id'=>2,
-                    'value_id'=>rand(4.5)
+                    'value_id'=>rand(1,2)
                 ],
                 ]),
 

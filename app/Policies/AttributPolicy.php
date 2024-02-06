@@ -2,7 +2,7 @@
 
 namespace App\Policies;
 
-use App\Models\Attribut;
+use App\Models\Attribute;
 use App\Models\User;
 use Illuminate\Auth\Access\Response;
 
@@ -19,7 +19,7 @@ class AttributPolicy
     /**
      * Determine whether the user can view the model.
      */
-    public function view(User $user, Attribut $attribut): bool
+    public function view(User $user, Attribute $attribut): bool
     {
         //
     }
@@ -35,7 +35,7 @@ class AttributPolicy
     /**
      * Determine whether the user can update the model.
      */
-    public function update(User $user, Attribut $attribut): bool
+    public function update(User $user, Attribute $attribut): bool
     {
         //
     }
@@ -43,7 +43,7 @@ class AttributPolicy
     /**
      * Determine whether the user can delete the model.
      */
-    public function delete(User $user, Attribut $attribut): bool
+    public function delete(User $user, Attribute $attribut): bool
     {
         //
     }
@@ -51,7 +51,7 @@ class AttributPolicy
     /**
      * Determine whether the user can restore the model.
      */
-    public function restore(User $user, Attribut $attribut): bool
+    public function restore(User $user, Attribute $attribut): bool
     {
         //
     }
@@ -59,7 +59,7 @@ class AttributPolicy
     /**
      * Determine whether the user can permanently delete the model.
      */
-    public function forceDelete(User $user, Attribut $attribut): bool
+    public function forceDelete(User $user, Attribute $attribut): bool
     {
         //
     }

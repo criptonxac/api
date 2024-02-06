@@ -23,7 +23,7 @@ class Value extends Model
     public function attribute(): BelongsTo
     {
 
-        return $this->belongsTo(Attribut::class);
+        return $this->belongsTo(Attribute::class);
 
     }
 }

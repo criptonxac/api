@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreAttributRequest;
 use App\Http\Requests\UpdateAttributRequest;
-use App\Models\Attribut;
+use App\Models\Attribute;
 
 class AttributController extends Controller
 {
@@ -35,7 +35,7 @@ class AttributController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Attribut $attribut)
+    public function show(Attribute $attribut)
     {
         //
     }
@@ -43,7 +43,7 @@ class AttributController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Attribut $attribut)
+    public function edit(Attribute $attribut)
     {
         //
     }
@@ -51,7 +51,7 @@ class AttributController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateAttributRequest $request, Attribut $attribut)
+    public function update(UpdateAttributRequest $request, Attribute $attribut)
     {
         //
     }
@@ -59,7 +59,7 @@ class AttributController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Attribut $attribut)
+    public function destroy(Attribute $attribut)
     {
         //
     }

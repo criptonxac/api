@@ -16,4 +16,6 @@ class Stock extends Model
         'quantity',
 
     ];
+
+    protected $table='stocks';
 }

@@ -44,4 +44,12 @@ class User extends Authenticatable implements LaratrustUser
     }
 
 
+    public function hasFavorite($favorite_id): bool
+    {
+
+
+        return  $this->favorites()->where('product_id',$favorite_id)->exists();
+
+    }
+
 }

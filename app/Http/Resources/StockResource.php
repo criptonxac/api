@@ -17,6 +17,7 @@ class StockResource extends JsonResource
     public function toArray(Request $request): array
     {
         $javob = [
+            'stock_id'   => $this->id,
             'quantity'   => $this->quantity,
         ];
 
@@ -27,6 +28,9 @@ class StockResource extends JsonResource
     {
         $attirbutes= json_decode($this->attributes);
         foreach ($attirbutes as $stockAttirbute) {
+            /*
+             * TODO cache it
+             * */
             $attirbute = Attribute::find($stockAttirbute->attribute_id);
 
             $value = Value::find($stockAttirbute->value_id);

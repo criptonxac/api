@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -18,7 +19,7 @@ class UserAddressFactory extends Factory
     {
         return [
 
-            'user_id'   =>fake()->numerify(50),
+            'user_id'   =>User::query()->inRandomOrder()->first()->id,
             'latitude'  =>fake()->text(),
             'longitude' =>fake()->text(),
             'region'    =>fake()->text(),

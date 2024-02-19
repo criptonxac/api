@@ -5,31 +5,26 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreUserAddressRequest;
 use App\Http\Requests\UpdateUserAddressRequest;
 use App\Models\UserAddress;
+use Illuminate\Database\Eloquent\Collection;
+
 
 class UserAddressController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
+    public function __construct()
     {
-        //
+        return $this->middleware('auth:sanctum');
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
+    public function index() :Collection
     {
-        //
+        return auth()->user()->addresses();
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(StoreUserAddressRequest $request)
     {
-        //
+
+        auth()->user()->addresses()->create($request->toArray());
+        return true;
     }
 
     /**

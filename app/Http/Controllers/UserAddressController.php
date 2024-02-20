@@ -15,9 +15,9 @@ class UserAddressController extends Controller
         return $this->middleware('auth:sanctum');
     }
 
-    public function index() :Collection
+    public function index()
     {
-        return auth()->user()->addresses();
+        return auth()->user()->addresses()->get();;
     }
 
     public function store(StoreUserAddressRequest $request)

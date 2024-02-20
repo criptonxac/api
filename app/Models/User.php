@@ -48,6 +48,11 @@ class User extends Authenticatable implements LaratrustUser
         return $this->belongsToMany(Product::class);
     }
 
+    public function orders():HasMany
+    {
+        return $this->hasMany(Order::class);
+    }
+
 
     public function hasFavorite($favorite_id): bool
     {

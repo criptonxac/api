@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreOrderRequest;
 use App\Http\Requests\UpdateOrderRequest;
 use App\Models\Order;
+use App\Models\Product;
 
 class OrderController extends Controller
 {
@@ -16,22 +17,26 @@ class OrderController extends Controller
 
     public function index()
     {
-        //
+        return auth()->user()->orders;
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(StoreOrderRequest $request)
     {
-        dd($request);
+        $sum=100;
+        $products= Product::query()->limit(4)->get();
+
+
+        auth()->user()->orders()->create([
+            'comment'           =>$request->comment,
+            'deliver_method_id' =>$request->deliver_method_id,
+            'payment_type_id'   =>$request->payment_type_id,
+            'address_id'        =>$request->address_id,
+            'sum'               =>$sum,
+            'products'          =>$products,
+
+        ]);
+
+        return "success";
     }
 
     /**

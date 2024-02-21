@@ -20,12 +20,12 @@ class UserAddressFactory extends Factory
         return [
 
             'user_id'   =>User::query()->inRandomOrder()->first()->id,
-            'latitude'  =>fake()->text(),
-            'longitude' =>fake()->text(),
+            'latitude'  =>fake()->numerify(),
+            'longitude' =>fake()->numerify(),
             'region'    =>fake()->text(),
             'district'  =>fake()->text(),
-            'street'    =>fake()->text(),
-            'home'      =>fake()->text(),
+            'street'    =>fake()->numerify(),
+            'home'      =>fake()->numerify(),
         ];
     }
 }

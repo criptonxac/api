@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreOrderRequest;
 use App\Http\Requests\UpdateOrderRequest;
+use App\Http\Resources\OrderResource;
 use App\Models\Order;
 use App\Models\Product;
+use App\Models\UserAddress;
 
 class OrderController extends Controller
 {
@@ -24,19 +26,36 @@ class OrderController extends Controller
     {
         $sum=100;
         $products= Product::query()->limit(4)->get();
+        $address=UserAddress::find($request->address_id);
+
+        foreach ($request['products'] as $product){
+            $prod = Product::with('stocks')->findOrFail($product['product_id']);
+
+//            dd($prod->stocks()->find($product['stock_id']));
+
+
+            if ($prod->stocks()->find($product['stock_id']) && $prod->stocks()
+                ->find(($product['stock_id']))->quantity > $product['quantity'])
+            {
+
+            }
+
+//            dd($prod);
+        }
 
 
         auth()->user()->orders()->create([
             'comment'           =>$request->comment,
-            'deliver_method_id' =>$request->deliver_method_id,
+            'delivery_method_id' =>$request->delivery_method_id,
             'payment_type_id'   =>$request->payment_type_id,
-            'address_id'        =>$request->address_id,
+            'address'           =>$address,
             'sum'               =>$sum,
             'products'          =>$products,
 
         ]);
+//        dd($request);
 
-        return "success";
+       return "success";
     }
 
     /**
@@ -44,7 +63,7 @@ class OrderController extends Controller
      */
     public function show(Order $order)
     {
-        //
+        return new OrderResource($order);
     }
 
     /**

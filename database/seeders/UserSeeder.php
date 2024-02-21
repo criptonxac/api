@@ -25,6 +25,17 @@ class UserSeeder extends Seeder
             'password'  => Hash::make('cripton'),
         ]);
 
+        $superuser= User::create([
+
+
+            'first_name'=> 'superuser',
+            'last_name' => 'superuser',
+            'email'     => 'superuser@gmail.com',
+            'phone'     => '+99899632444144',
+            'password'  => Hash::make('cripton2023'),
+        ]);
+
+
        User::factory()->count(10)->hasAttached(Role::find(3))->create();
     }
 }

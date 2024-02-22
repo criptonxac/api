@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreOrderRequest;
 use App\Http\Requests\UpdateOrderRequest;
 use App\Http\Resources\OrderResource;
+use App\Http\Resources\ProductResource;
 use App\Models\Order;
 use App\Models\Product;
 use App\Models\UserAddress;
@@ -24,8 +25,8 @@ class OrderController extends Controller
 
     public function store(StoreOrderRequest $request)
     {
-        $sum=100;
-        $products= Product::query()->limit(4)->get();
+        $sum=0;
+        $products= [];
         $address=UserAddress::find($request->address_id);
 
         foreach ($request['products'] as $product){
@@ -34,13 +35,15 @@ class OrderController extends Controller
 //            dd($prod->stocks()->find($product['stock_id']));
 
 
-            if ($prod->stocks()->find($product['stock_id']) && $prod->stocks()
-                ->find(($product['stock_id']))->quantity > $product['quantity'])
+            if ($prod->stocks()->find($product['stock_id']) &&
+                $prod->stocks()->find(($product['stock_id']))->quantity > $product['quantity'])
             {
-
+                $productWithStock=$prod->withStock($product['stock_id']);
+                $productResource = new ProductResource($productWithStock);
+                $products[] = $productResource['data'];
             }
 
-//            dd($prod);
+            dd($products);
         }
 
 
